@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+
+        android:key="mqtt_broker"
+        android:title="MQTT Configuration">
+
+
+        <EditTextPreference
+            android:defaultValue="Broker Default"
+            android:dialogTitle="Broker Details"
+            android:key="mqtt_broker_name"
+            android:editable="false"
+            android:clickable="false"
+            android:title="Broker Name: Default" />
+
+            />
+
+        <EditTextPreference
+
+            android:defaultValue="broker.hivemq.com"
+            android:dialogTitle="Device IP"
+            android:key="mqtt_broker_url"
+            android:summary="change or add your broker URL value"
+            android:title="Broker URL" />
+        <EditTextPreference
+
+            android:defaultValue="1883"
+            android:dialogTitle="Mqtt Broker Port"
+            android:key="mqtt_broker_port"
+            android:summary="add your mqtt broker port"
+            android:title="Mqtt Broker Port" />
+
+        <EditTextPreference
+            android:defaultValue="/thomasj/cardata"
+            android:dialogTitle="Mqtt Topic to Publish"
+            android:key="mqtt_broker_published_topic"
+            android:summary="add your mqtt topic to publish on server"
+            android:title="Mqtt Topic to Publish" />
+
+        <EditTextPreference
+            android:defaultValue="/thomasj/statusdata"
+            android:dialogTitle="Mqtt Topic to Subscribe"
+            android:key="mqtt_broker_subscribe_topic"
+            android:summary="add your mqtt topic to subscribe from server"
+            android:title="Mqtt Topic to Subscribe" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogTitle=""
+            android:key="enable_ssl_preference"
+            android:summaryOff="Select Checkbox to send data with SSL"
+            android:summaryOn="UnCheck to make SSL-Sending OFF"
+            android:title="SSL-Sending" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dialogTitle=""
+            android:key="enable_credentials_preference"
+            android:summaryOff="Input username and password from user for MQTT"
+            android:summaryOn="UnCheck to disable need for username and password"
+            android:title="User Credentials for MQTT" />
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="MQTT Brokers">
+
+        <ListPreference
+            android:dialogTitle="Your Saved Brokers"
+            android:key="brokers_list_preference"
+            android:summary="Select you current broker for MQTT"
+            android:title="Your Saved Brokers" />
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory android:title="Add new mqtt broker">
+        <PreferenceScreen
+            android:key="add_mqtt_broker_screen"
+            android:summary="add a new MQTT broker details"
+            android:title="Add MQTT Broker"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Remove mqtt broker">
+        <PreferenceScreen
+            android:key="remove_mqtt_broker_screen"
+            android:summary="Remove MQTT broker details"
+            android:title="Remove MQTT Broker"/>
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

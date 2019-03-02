@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.pires.obd.reader"
+    android:versionCode="13"
+    android:versionName="2.0-RC2">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".ODBII_Reader"
+        android:allowBackup="true"
+
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+
+            android:windowSoftInputMode="stateHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".config.BtDeviceListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/select_device"
+            android:theme="@android:style/Theme.Holo.Dialog" />
+
+
+        <activity
+            android:name=".activity.ConfigActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".activity.TroubleCodesActivity"
+            android:label="@string/title_activity_trouble_codes"
+            android:launchMode="singleInstance" />
+
+        <activity
+            android:name=".activity.LastReceivedDataListActivity"
+            android:label="@string/title_activity_trips_list"
+            android:launchMode="singleInstance" />
+
+        <service
+            android:name=".io.ObdGatewayService"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <!--
+            <service
+            android:name="com.github.pires.obd.reader.io.MockObdGatewayService"
+            android:launchMode="singleInstance"
+            android:exported="false" />
+        -->
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+        <service android:name=".mqtt_odbii.AppMqttService" />
+
+        <activity android:name=".activity.MQTTConfigurationActivity" />
+        <activity android:name=".activity.AddMqttBrokerActivity">
+        </activity>
+
+
+        <activity android:name=".activity.RemoveMqttBrokerActivity">
+       </activity>
+
+
+    </application>
+
+</manifest>

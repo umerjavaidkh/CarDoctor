@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8"
+    android:orientation="vertical"
+    android:background="#A5B0B7"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.9"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="OnRegisterClick"
+            android:text="Add MQTT Broker"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textSize="@dimen/sign_up_welcome_text_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+
+
+        <EditText
+
+            tools:ignore="MissingPrefix"
+            android:id="@+id/brokerName"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/login_button_margin_left_right"
+            android:layout_marginLeft="@dimen/login_button_margin_left_right"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/sign_up_text_size"
+            android:background="@null"
+
+            android:hint="enter unique name for broker"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textColorHint="@color/appSignUpTextcolorHint"
+            android:layout_height="@dimen/sign_up_text_height" />
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_gravity="bottom"
+        android:layout_height="1dp">
+
+    </View>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+
+        <EditText
+            tools:ignore="MissingPrefix"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/login_button_margin_left_right"
+            android:layout_marginLeft="@dimen/login_button_margin_left_right"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/sign_up_text_size"
+            android:id="@+id/brokerURL"
+
+            android:hint="enter broker url"
+            android:inputType="text"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textColorHint="@color/appSignUpTextcolorHint"
+            android:background="@null"
+            android:layout_height="@dimen/sign_up_text_height" />
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_gravity="bottom"
+        android:layout_height="1dp">
+
+    </View>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+
+        <EditText
+            tools:ignore="MissingPrefix"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/login_button_margin_left_right"
+            android:layout_marginLeft="@dimen/login_button_margin_left_right"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/sign_up_text_size"
+            android:hint="enter server port"
+            android:id="@+id/serverPort"
+
+            android:inputType="numberSigned"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textColorHint="@color/appSignUpTextcolorHint"
+            android:background="@null"
+            android:layout_height="@dimen/sign_up_text_height" />
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_height="1dp">
+
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+
+
+        <EditText
+            tools:ignore="MissingPrefix"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/login_button_margin_left_right"
+            android:layout_marginLeft="@dimen/login_button_margin_left_right"
+            android:gravity="center"
+            android:id="@+id/userName"
+            android:textStyle="bold"
+            android:textSize="@dimen/sign_up_text_size"
+            android:hint="enter user name (optional)"
+
+            android:inputType="text"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textColorHint="@color/appSignUpTextcolorHint"
+            android:background="@null"
+            android:layout_height="@dimen/sign_up_text_height" />
+
+
+    </LinearLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_height="1dp">
+
+    </View>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_height="0dp">
+
+
+        <EditText
+            tools:ignore="MissingPrefix"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/login_button_margin_left_right"
+            android:layout_marginLeft="@dimen/login_button_margin_left_right"
+            android:gravity="center"
+            android:inputType="textPassword"
+            android:textStyle="bold"
+            android:hint="enter password (optional)"
+
+            android:textSize="@dimen/sign_up_text_size"
+            android:id="@+id/password"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textColorHint="@color/appSignUpTextcolorHint"
+            android:background="@null"
+            android:layout_height="@dimen/sign_up_text_height" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_height="1dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.5"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/registerButton"
+
+            android:layout_width="200dp"
+            android:layout_height="@dimen/login_button_height"
+
+            android:layout_marginTop="@dimen/sign_up_button_margin_top"
+            android:background="@drawable/button_login_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="OnNextClick"
+            android:text="Create"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/login_button_text_size"
+            tools:ignore="MissingPrefix" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

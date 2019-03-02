@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="#A5B0B7"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="Remove MQTT Broker"
+            android:textColor="@color/appSignUpTextcolor"
+            android:textSize="@dimen/sign_up_welcome_text_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/brokersList"
+        android:paddingTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+
+</LinearLayout>

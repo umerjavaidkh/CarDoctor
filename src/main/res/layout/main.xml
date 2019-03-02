@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vehicle_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+   >
+
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+
+        android:layout_height="match_parent">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+
+                android:layout_height="wrap_content">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="Bluetooth Device"
+                    android:textSize="20dp"
+                    android:layout_marginRight="30dp"
+                    android:textColor="#200000"
+                    android:layout_height="wrap_content" />
+
+                <com.sevenheaven.iosswitch.ShSwitchView
+                    xmlns:shSwitch="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/bluetoothScanButton"
+                    android:layout_width="66dip"
+                    android:layout_height="44dip"
+                    shSwitch:tintColor="#ff62cc2f"
+                    shSwitch:shadowSpace="7dip"/>
+
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/bluetoothDeviceStatus"
+                android:layout_width="wrap_content"
+                android:text="Disconnected"
+                android:textSize="20dp"
+                android:textColor="#200000"
+                android:layout_height="wrap_content" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+
+                android:layout_height="wrap_content">
+
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="Network Device"
+                    android:textSize="20dp"
+                    android:layout_marginRight="30dp"
+                    android:textColor="#200000"
+                    android:layout_height="wrap_content" />
+
+
+
+
+                <com.sevenheaven.iosswitch.ShSwitchView
+                    xmlns:shSwitch="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/networkScanButton"
+                    android:layout_width="66dip"
+                    android:layout_height="44dip"
+                    shSwitch:tintColor="#ff62cc2f"
+                    shSwitch:shadowSpace="7dip"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/networkDeviceStatus"
+                android:layout_width="wrap_content"
+                android:text="Disconnected"
+                android:textSize="20dp"
+
+                android:textColor="#200000"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:text="Mqtt Connection"
+                    android:textSize="20dp"
+                    android:layout_marginRight="30dp"
+                    android:textColor="#200000"
+                    android:layout_height="wrap_content" />
+
+
+
+
+                <com.sevenheaven.iosswitch.ShSwitchView
+                    xmlns:shSwitch="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/connectToMqttServer"
+                    android:layout_width="66dip"
+                    android:layout_height="44dip"
+                    shSwitch:tintColor="#ff62cc2f"
+                    shSwitch:shadowSpace="7dip"/>
+
+
+
+            </LinearLayout>
+
+
+            <!--<TextView
+                android:id="@+id/mqttDeviceStatus"
+                android:layout_width="wrap_content"
+                android:text="Disconnected"
+                android:textSize="20dp"
+                android:textColor="#200000"
+                android:layout_height="wrap_content" />-->
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:background="#F7A36F"
+            android:layout_height="50dp">
+
+
+           <LinearLayout
+               android:id="@+id/topicsLayout"
+               android:layout_marginLeft="15dp"
+               android:layout_width="wrap_content"
+               android:orientation="vertical"
+               android:layout_height="match_parent">
+
+
+               <TextView
+                   android:id="@+id/topicPublishedTV"
+                   android:textColor="@android:color/holo_red_dark"
+                   android:layout_width="wrap_content"
+                   android:layout_marginTop="3dp"
+                   android:textSize="14dp"
+                   android:layout_centerHorizontal="true"
+                   android:text="/thomasj/cardata"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:id="@+id/topicSubscribeTV"
+                   android:textColor="@android:color/holo_red_dark"
+                   android:layout_below="@id/sendCount"
+                   android:layout_centerInParent="true"
+                   android:textSize="14dp"
+                   android:layout_width="wrap_content"
+                   android:text="/thomasj/statusdata"
+                   android:layout_height="wrap_content" />
+
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_toRightOf="@id/topicsLayout"
+                android:id="@+id/valuesLayout"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sendCount"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="14dp"
+               android:layout_centerHorizontal="true"
+                android:text="Message Send : 0"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/receivedCount"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_below="@id/sendCount"
+                android:layout_centerInParent="true"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:text="Message Received : 0"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:tag="SPEED"
+            android:text="@string/text_zero"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/compass_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/text_orientation_default"
+            android:textSize="24dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="FUEL_CONSUMPTION"
+            android:text="@string/text_consumption_default" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="ENGINE_RUNTIME"
+            android:text="@string/text_runtime_default" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="ENGINE_RPM"
+            android:text="" />
+    </TableRow>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_height="300dp">
+
+
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/data_scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="top"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:elevation="2dp"
+            android:outlineProvider="bounds">
+
+
+
+            <TableLayout
+                android:id="@+id/data_table"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"></TableLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+       <!-- <android.support.v4.widget.NestedScrollView
+            android:id="@+id/json_data_scroll"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="top"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:outlineProvider="bounds">
+
+            <TableLayout
+                android:id="@+id/json_data_table"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"></TableLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>-->
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/text_gps"
+            android:textSize="@dimen/abc_text_size_medium_material" />
+
+        <TextView
+            android:id="@+id/currentConnectionOver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/text_bluetooth"
+            android:textSize="@dimen/abc_text_size_medium_material" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/text_obd"
+            android:textSize="@dimen/abc_text_size_medium_material" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/GPS_POS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/BT_STATUS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/OBD_STATUS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="" />
+    </TableRow>
+
+</LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>
