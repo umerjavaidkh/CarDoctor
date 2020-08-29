@@ -17,28 +17,7 @@ public class ShowAd {
 
     public static void createAd()
     {
-       /* try {
-            if (mInterstitialAd != null) {
-                mInterstitialAd = null;
-            }
-            mInterstitialAd = new InterstitialAd(ODBII_Reader.appContext);
-            mInterstitialAd.setAdUnitId("ca-app-pub-8982961142951920/6177319711");
-            requestNewInterstitial();
-
-
-            mInterstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-
-                   // mInterstitialAd.show();
-
-                }
-            });
-
-        }catch (Exception ex){
-            ex.toString();
-        }*/
+       
     }
 
 
